@@ -21,7 +21,14 @@ Proje **Katmanlı Mimari (Layered Architecture)** prensiplerine göre yapıland�
 3.  **Data Access Layer (Veri Erişim Katmanı)**: `Data` klasörü (`AppDbContext`). Veritabanı ile doğrudan iletişim kurar.
 4.  **Core / Shared**: `Entities`, `DTOs`. Veri modellerini ve taşıma nesnelerini içerir.
 
-
+### Mimari Diyagramı (Basitleştirilmiş)
+```mermaid
+graph TD
+    Client[Client] --> API["API (Controllers / Minimal API)"]
+    API --> Service[Service Layer]
+    Service --> Data["Data Access Layer (EF Core)"]
+    Data --> DB[(SQLite Database)]
+```
 
 ## Endpoint Listesi
 
